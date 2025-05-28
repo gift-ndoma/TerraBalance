@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Terra Balance Organic Cocoa – Pure, Natural, and Sustainably Sourced">
+    <meta property="og:description" content="Discover Terra Balance Organic Cocoa – ethically sourced, rich in flavor, and perfect for healthy drinks and recipes. 100% organic and sustainably grown.">
+    <meta property="og:image" content="images/organic-cocoa-main.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://gift-ndoma.github.io/product_page/product.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Terra Balance">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/product_page.css">
+    <script src="scripts/product_page.js" defer></script>
+    <script src="scripts/review.js" defer></script>
+    <title>Organic Andean Cocoa Powder | Terra Balance</title>
+</head>
+<body>
+    <header>
+        <div class="terra-header">
+            <img src="images/logo.jpeg" alt="Terra Balance Logo" width="60" height="60">
+            <h1>Terra Balance</h1>
+        </div>
+        <div class="cart">
+            <a href="cart.html"><img src="images/cart.svg" alt="Cart Icon" width="30" height="30"><span class="cart-count">0</span></a>
+        </div>
+    </header>
+    <main>
+        <div class="bread-crumb">
+            <ul>
+                <li><a href="index.html">Home</a> &gt;</li>
+                <li><a href="shop.html">Shop</a> &gt;</li>
+                <li>Organic Andean Cocoa Powder</li>
+            </ul>
+        </div>
+        <div class="product-details">
+            <div class="product-gallery">
+                <img id="mainImage" src="images/organic-cocoa-main.jpg" alt="Organic Cocoa Main Image" loading="lazy" width="600">
+                <div class="thumbnails">
+                    <img src="images/organic-cocoa-thumb1.jpg" alt="Organic Cocoa Powder" onclick="changeImage('images/organic-cocoa-thumb1.jpg')" loading="lazy" width="120" height="100">
+                    <img src="images/organic-cocoa-thumb2.jpg" alt="Organic Cocoa Powder" onclick="changeImage('images/organic-cocoa-thumb2.jpg')" loading="lazy" width="120" height="100">
+                    <img src="images/organic-cocoa-thumb3.jpg" alt="Organic Cocoa Powder" onclick="changeImage('images/organic-cocoa-thumb3.jpg')" loading="lazy" width="120" height="100">
+                    <img src="images/organic-cocoa-main.jpg" alt="Organic Cocoa Powder" onclick="changeImage('images/organic-cocoa-thumb2.jpg')" loading="lazy" width="120" height="100">
+                </div>
+            </div>
+            <div class="product-details-container">
+                <h2>Organic Andean Cocoa Powder</h2>
+                <div class="certifications">
+                    <button type="button">✓ USDA Organic</button>
+                    <button type="button">✓ Fair Trade Certified</button>
+                    <button type="button">✓ Non-GMO Project Verified</button>
+                </div>
+                <p class="review">⭐⭐⭐⭐⭐ 4.7(3 Reviews)</p>
+                <h3>$12.99</h3>
+                <p class="quant">Quantity</p>
+                <div class="quantity-selector">
+                    <button type="button" onclick="decreaseQuantity()">−</button>
+                    <input type="number" id="quantity" value="1" min="1" readonly>
+                    <button type="button" onclick="increaseQuantity()">+</button>
+                </div>
+                <button id="add_to_cart" type="button" onclick="addToCart()">Add to Cart</button>
+                <p class="additional-info"><span><b>Origin:</b></span> Andean Region, South America</p>
+                <p class="additional-info"><span><b>Category:</b></span> Pantry Staples</p>
+                <p class="additional-info"><span><b>Availability:</b></span> 150 in stock</p>
+            </div>
+        </div>
+        <div class="tab-button-container">
+            <button type="button" class="tab-button active" onclick="showTab('tab1', this)">Description</button>
+            <button type="button" class="tab-button" onclick="showTab('tab2', this)">Reviews(3)</button>
+            <button type="button" class="tab-button" onclick="showTab('tab3', this)">Related Products</button>
+        </div>
+        <div>
+            <section id="tab1" class="tab-content">
+                <h2>Product Story</h2>
+                <p>Experience the rich, authentic taste of 100% pure organic cocoa powder, sustainably sourced from the Andean highlands. Perfect for baking, smoothies, or a decadent hot chocolate. Our cocoa is fair-trade certified, supporting local farming communities.</p>
+            </section>
+            <section id="tab2" class="tab-content review-section" style="display: none;">
+                <div id="reviews-container" class="reviews-container">
+                    <!-- Dynamically loaded reviews go here -->
+                </div>
+                <form id="review-form" class="review-form">
+                    <h2>Leave a Review</h2>
+                    <label for="reviewer-name">Your Name</label>
+                    <input type="text" id="reviewer-name" placeholder="e.g., Jane Doe" required class="input-style">
+                    <div class="rating-group">
+                        <label for="review-rating">Your Rating:</label>
+                        <select id="review-rating" required class="select-style">
+                        <option value="">--Select--</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="1">⭐</option>
+                        </select>
+                    </div>
+                    <label for="review-text">Your Review</label>
+                    <textarea id="review-text" placeholder="Share your thoughts about the product..." required class="textarea-style"></textarea>
+                    <button type="submit" id="submit-btn">Submit Review</button>
+                </form>
+            </section>
+            <section id="tab3" class="tab-content" style="display: none;">
+                <h2>You Might Also Like</h2>
+                <div class="related-products" id="related-products">
+                    <!-- JavaScript will insert product cards here -->
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="terra-goal-container">
+            <div class="terra-goal">
+                <img src="images/logo.jpeg" alt="Terra Balance Logo" width="50px">
+                <h2>Terra Balance</h2>
+            </div>
+            <p>Handmade, sustainable products for a balanced life. Nurturing you and the Earth.</p>
+        </div>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li>Shop All</li>
+                <li>Our Story</li>
+                <li>Sustainability</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+        <div class="contact-container">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+                <a><img src="images/youtube.svg" alt="Youtube Icon" width="30"></a>
+                <a><img src="images/facebook.svg" alt="FaceBook Icon" width="30"></a>
+                <a><img src="images/instagram.svg" alt="Instagram Icon" width="30"></a>
+            </div>
+            <p>Subscribe to our newsletter for updates and special offers.</p>
+            <form>
+                <input type="email" placeholder="Your Email..">
+                <button type="button">Subscribe</button>
+            </form>
+        </div>
+        <div class="last-modified">
+            <p>© 2025 Terra Balance. All rights reserved.</p>
+            <p>Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+</body>
+</html>
