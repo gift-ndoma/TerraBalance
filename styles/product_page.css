@@ -103,6 +103,7 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    width: 100%;
 }
 
 .thumbnails {
@@ -205,7 +206,7 @@ header {
     margin-bottom: 1.6rem;
 }
 
-#add_to_cart {
+.product-details-container #add_to_cart {
     font-size: 1.3rem;
     padding: 10px 0;
     font-family: var(--primary-font);
@@ -218,7 +219,7 @@ header {
     transition: transform .4s;
 }
 
-#add_to_cart:hover {
+.product-details-container #add_to_cart:hover {
     cursor: pointer;
     transform: scale(1.02);
 }
@@ -513,4 +514,66 @@ form button:hover {
 .textarea-style,
 .select-style {
     outline: none;
+}
+
+.related-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 2rem;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.related-products div {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.related-products div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.related-products img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: auto;
+}
+
+.related-products div h2 {
+    padding: 20px 0 10px 20px;
+    font-family: var(--main-font);
+    color: var(--card-foreground);
+}
+
+.related-products p {
+    padding: 10px 0 10px 20px;
+    font-size: 1.5rem;
+    font-family: var(--primary-font);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.related-products button {
+    margin: 20px 20px 10px 20px;
+    background-color: var(--background);
+    padding: 10px 0;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    color: var(--primary);
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.related-products button:hover {
+    background-color: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
 }
