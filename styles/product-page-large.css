@@ -1,0 +1,76 @@
+:root {
+    --background: hsl(36 100% 98%);
+    --foreground: hsl(40 50% 15%);
+    --card: hsl(36 100% 98%);
+    --card-foreground: hsl(40 50% 15%);
+    --popover: hsl(36 100% 98%);
+    --popover-foreground: hsl(40 50% 15%);
+    --primary: hsl(90 45% 45%);
+    --primary-foreground: 90 45% 95%;
+    --secondary: hsl(30 50% 60%);
+    --secondary-foreground: hsl(30 50% 95%);
+    --muted: hsl(40 20% 88%);
+    --muted-foreground: hsl(40 20% 45%);
+    --accent: hsl(90 35% 55%);
+    --accent-foreground: hsl(90 35% 95%);
+    --destructive: hsl(0 60% 50%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --border: hsl(40 20% 80%);
+    --input: hsl(40 20% 75%);
+    --ring: hsl(90 45% 50%);
+    --radius: 0.5rem;
+    --main-font: "Lato";
+    --primary-font: "Josefin Sans";
+    --secondary-font: "Nunito"
+}
+
+@media (max-width: 960px) {
+    .product-details {
+        display: flex;
+        flex-direction: column;
+        margin-right: 1.5rem;
+    }
+
+    .product-gallery .thumbnails {
+        width: 100%;
+    }
+
+    .product-details-container {
+        margin: 2rem 0;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0;
+    }
+
+    .quick-links {
+        margin: -2rem 0 -2rem;
+    }
+
+    .contact-container {
+        width: 100%;
+    }
+
+    .contact-container form input {
+        width: 75%;
+    }
+
+    .last-modified {
+        width: 100%;
+        grid-column: 1/4;
+        text-align: center;
+        border-top: 1px solid var(--border);
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .thumbnails img {
+        width: 22%;
+        height: 60px;
+    }
+}

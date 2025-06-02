@@ -138,6 +138,8 @@ header {
 
 .certifications {
     margin: 1rem 0;
+    display: flex;
+    gap: 10px;
 }
 
 .certifications button {
@@ -208,7 +210,7 @@ header {
 
 .product-details-container #add_to_cart {
     font-size: 1.3rem;
-    padding: 10px 0;
+    padding: 15px 0;
     font-family: var(--primary-font);
     border: none;
     background-color: var(--primary);
@@ -514,6 +516,13 @@ form button:hover {
 .textarea-style,
 .select-style {
     outline: none;
+}
+
+#tab3 > h2 {
+    text-align: center;
+    font-family: var(--primary-font);
+    color: var(--primary);
+    font-size: 1.8rem;
 }
 
 .related-products {
