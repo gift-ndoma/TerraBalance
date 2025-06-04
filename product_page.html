@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles/product-page-large.css">
     <script src="scripts/product_page.js" defer></script>
     <script src="scripts/review.js" defer></script>
+    <script src="scripts/add-to-cart.js" defer></script>
     <title>Organic Andean Cocoa Powder | Terra Balance</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
             <h1>Terra Balance</h1>
         </div>
         <div class="cart">
-            <a href="cart.html"><img src="images/cart.svg" alt="Cart Icon" width="30" height="30"><span class="cart-count">0</span></a>
+            <a href="cart.html"><img src="images/cart.svg" alt="Cart Icon" width="30" height="30"><span id="cart-count">0</span></a>
         </div>
     </header>
     <main>
@@ -43,26 +44,26 @@
                 <div class="thumbnails">
                     <img src="images/organic-cocoa-thumb1.jpg" alt="Organic Cocoa Powder" onclick="changeImage('images/organic-cocoa-thumb1.jpg')" loading="lazy" width="120" height="100">
                     <img src="images/organic-cocoa-thumb2.jpg" alt="Organic Cocoa Powder" onclick="changeImage('images/organic-cocoa-thumb2.jpg')" loading="lazy" width="120" height="100">
-                    <img src="images/organic-cocoa-thumb3.jpg" alt="Organic Cocoa Powder" onclick="changeImage('images/organic-cocoa-thumb3.jpg')" loading="lazy" width="120" height="100">
+                    <img src="images/organic-cocoa-thumb1.jpg" alt="Organic Cocoa Powder" onclick="changeImage('images/organic-cocoa-thumb1.jpg')" loading="lazy" width="120" height="100">
                     <img src="images/organic-cocoa-main.jpg" alt="Organic Cocoa Powder" onclick="changeImage('images/organic-cocoa-thumb2.jpg')" loading="lazy" width="120" height="100">
                 </div>
             </div>
             <div class="product-details-container">
-                <h2>Organic Andean Cocoa Powder</h2>
+                <h2 class="title">Organic Andean Cocoa Powder</h2>
                 <div class="certifications">
-                    <button type="button">✓ USDA Organic</button>
+                    <button type="button">✓ USD A Organic</button>
                     <button type="button">✓ Fair Trade Certified</button>
                     <button type="button">✓ Non-GMO Project Verified</button>
                 </div>
                 <p class="review">⭐⭐⭐⭐⭐ 4.7(3 Reviews)</p>
-                <h3>$12.99</h3>
+                <h3 class="price">$12.99</h3>
                 <p class="quant">Quantity</p>
                 <div class="quantity-selector">
-                    <button type="button" onclick="decreaseQuantity()">−</button>
-                    <input type="number" id="quantity" value="1" min="1" readonly>
-                    <button type="button" onclick="increaseQuantity()">+</button>
+                    <button type="button" class="decreaseButton">−</button>
+                    <input type="number" class="quantity" value="1" min="1" readonly>
+                    <button type="button" class="increaseButton">+</button>
                 </div>
-                <button id="add_to_cart" type="button" onclick="addToCart()">Add to Cart</button>
+                <button id="add_to_cart" type="button">Add to Cart</button>
                 <p class="additional-info"><span><b>Origin:</b></span> Andean Region, South America</p>
                 <p class="additional-info"><span><b>Category:</b></span> Pantry Staples</p>
                 <p class="additional-info"><span><b>Availability:</b></span> 150 in stock</p>

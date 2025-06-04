@@ -9,37 +9,44 @@ function showTab(tabId, clickedButton) {
     clickedButton.classList.add('active');
 }
 
-const products = [
+// Updated products array with unique IDs - make it global
+window.products = [
     {
+        id: 2,
         name: "Sun-Dried Plantain Chips",
         price: 5.99,
         image: "images/plantain.jpg"
     },
     {
+        id: 3,
         name: "Fresh Apple Fruit",
         price: 5.99,
         image: "images/apple.jpg"
     },
     {
+        id: 4,
         name: "Fresh Diary Milk",
         price: 5.99,
         image: "images/diary-milk.jpg"
     },
     {
+        id: 5,
         name: "Fresh Organic Tomato",
         price: 6.55,
         image: "images/tomato.jpg"
     },
     {
+        id: 6,
         name: "Natural Fresh Mango",
         price: 10.22,
         image: "images/mango.jpg"
     }
-]
+];
 
 const relatedProducts = document.querySelector('#related-products');
 
-products.forEach(product => {
+// Fixed product card generation
+window.products.forEach(product => {
     const productCard = document.createElement('div');
     productCard.classList.add('productCard');
 
@@ -47,8 +54,12 @@ products.forEach(product => {
     <img src="${product.image}" alt="${product.name}">
     <h2>${product.name}</h2>
     <p>$${product.price}</p>
-    <button id="add_to_cart" class="addToCart" type="button" onclick="addToCart()">Add To Cart</button>
+    <button class="addToCart" type="button" data-product-id="${product.id}">Add To Cart</button>
     `;
 
     relatedProducts.appendChild(productCard);
 });
+
+function changeImage(src) {
+    document.getElementById("mainImage").src = src;
+}

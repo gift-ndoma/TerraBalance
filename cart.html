@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Terra Balance Organic Cocoa – Pure, Natural, and Sustainably Sourced">
+    <meta property="og:description" content="Discover Terra Balance Organic Cocoa – ethically sourced, rich in flavor, and perfect for healthy drinks and recipes. 100% organic and sustainably grown.">
+    <meta property="og:image" content="images/organic-cocoa-main.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://gift-ndoma.github.io/product_page/product.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Terra Balance">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/product_page.css">
+    <link rel="stylesheet" href="styles/product-page-large.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <script src="scripts/product_page.js" defer></script>
+    <script src="scripts/review.js" defer></script>
+    <script src="scripts/add-to-cart.js" defer></script>
+    <title>Organic Andean Cocoa Powder | Terra Balance</title>
+</head>
+<body>
+    <header>
+        <div class="terra-header">
+            <img src="images/logo.jpeg" alt="Terra Balance Logo" width="60" height="60">
+            <h1>Terra Balance</h1>
+        </div>
+        <div class="cart">
+            <a href="cart.html"><img src="images/cart.svg" alt="Cart Icon" width="30" height="30"><span id="cart-count">0</span></a>
+        </div>
+    </header>
+    <main>
+        <div class="bread-crumb">
+            <ul>
+                <li><a href="index.html">Home</a> &gt;</li>
+                <li><a href="shop.html">Shop</a> &gt;</li>
+                <li>Your Cart</li>
+            </ul>
+        </div>
+        <div id="cart-container">
+            <!-- Cart content will be dynamically loaded here -->
+        </div>
+    <script>
+        // Cart functionality
+        function getCart() {
+            const cart = localStorage.getItem('cart');
+            return cart ? JSON.parse(cart) : [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function updateCartCount() {
+            const cart = getCart();
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            document.querySelector('#cart-count').textContent = totalItems;
+        }
+
+        function updateQuantity(productId, newQuantity) {
+            const cart = getCart();
+            const itemIndex = cart.findIndex(item => item.id === productId);
+            
+            if (itemIndex > -1) {
+                if (newQuantity <= 0) {
+                    cart.splice(itemIndex, 1);
+                } else {
+                    cart[itemIndex].quantity = newQuantity;
+                }
+                saveCart(cart);
+                displayCart();
+                updateCartCount();
+            }
+        }
+
+        function removeItem(productId) {
+            const cart = getCart();
+            const updatedCart = cart.filter(item => item.id !== productId);
+            saveCart(updatedCart);
+            displayCart();
+            updateCartCount();
+        }
+
+        function calculateTotal(cart) {
+            return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+        }
+
+        function displayCart() {
+            const cart = getCart();
+            const container = document.getElementById('cart-container');
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="cart-items">
+                        <div class="empty-cart">
+                            <h2>Your cart is empty</h2>
+                            <p>Looks like you haven't added any items to your cart yet.</p>
+                            <a href="product_page.html" class="continue-shopping">Continue Shopping</a>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            const subtotal = calculateTotal(cart);
+            const shipping = subtotal > 50 ? 0 : 5.99;
+            const total = subtotal + shipping;
+
+            container.innerHTML = `
+                <div class="cart-content">
+                    <div class="cart-items">
+                        <h2 style="margin-bottom: 1rem; color: #2c5530;">Items in Your Cart</h2>
+                        ${cart.map(item => `
+                            <div class="cart-item">
+                                <img src="${item.image}" alt="${item.name}" class="item-image">
+                                <div class="item-details">
+                                    <h3>${item.name}</h3>
+                                    <p class="item-price">$${item.price.toFixed(2)}</p>
+                                </div>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity - 1})">−</button>
+                                    <input type="number" value="${item.quantity}" class="quantity-input" readonly>
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                                </div>
+                                <div class="item-total">$${(item.price * item.quantity).toFixed(2)}</div>
+                                <button class="remove-btn" onclick="removeItem(${item.id})">Remove</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="cart-summary">
+                        <h2 style="margin-bottom: 1rem; color: #2c5530;">Order Summary</h2>
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span>$${subtotal.toFixed(2)}</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span>${shipping === 0 ? 'FREE' : '$' + shipping.toFixed(2)}</span>
+                        </div>
+                        ${shipping === 0 ? '' : '<p style="font-size: 0.9rem; color: #666; margin: 0.5rem 0;">Free shipping on orders over $50</p>'}
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span>$${total.toFixed(2)}</span>
+                        </div>
+                        <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+                        <a href="product_page.html" class="continue-shopping" style="display: block; text-align: center; margin-top: 1rem;">Continue Shopping</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function proceedToCheckout() {
+            alert('Checkout functionality would be implemented here!');
+        }
+
+        // Initialize cart display and count on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            displayCart();
+            updateCartCount();
+        });
+    </script>
+        
+    </main>
+    <footer>
+        <div class="terra-goal-container">
+            <div class="terra-goal">
+                <img src="images/logo.jpeg" alt="Terra Balance Logo" width="50px">
+                <h2>Terra Balance</h2>
+            </div>
+            <p>Handmade, sustainable products for a balanced life. Nurturing you and the Earth.</p>
+        </div>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li>Shop All</li>
+                <li>Our Story</li>
+                <li>Sustainability</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+        <div class="contact-container">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+                <a><img src="images/youtube.svg" alt="Youtube Icon" width="30"></a>
+                <a><img src="images/facebook.svg" alt="FaceBook Icon" width="30"></a>
+                <a><img src="images/instagram.svg" alt="Instagram Icon" width="30"></a>
+            </div>
+            <p>Subscribe to our newsletter for updates and special offers.</p>
+            <form>
+                <input type="email" placeholder="Your Email..">
+                <button type="button">Subscribe</button>
+            </form>
+        </div>
+        <div class="last-modified">
+            <p>© 2025 Terra Balance. All rights reserved.</p>
+            <p>Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+</body>
+</html>
