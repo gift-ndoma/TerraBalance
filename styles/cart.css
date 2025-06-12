@@ -29,9 +29,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 main {
-    margin: 2rem;
+    margin-top: 100px 2rem; /* Space for fixed header */
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
 }
+
 .container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -188,7 +192,7 @@ main {
     text-align: center;
     padding: 3rem;
     color: #666;
-    
+
 }
 
 .empty-cart img {

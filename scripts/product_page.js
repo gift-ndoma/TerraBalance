@@ -20,7 +20,7 @@ window.products = [
     {
         id: 3,
         name: "Fresh Apple Fruit",
-        price: 5.99,
+        price: 31,
         image: "images/apple.jpg"
     },
     {
@@ -51,7 +51,7 @@ window.products.forEach(product => {
     productCard.classList.add('productCard');
 
     productCard.innerHTML = `
-    <img src="${product.image}" alt="${product.name}">
+    <img src="${product.image}" alt="${product.name}" loading="lazy">
     <h2>${product.name}</h2>
     <p>$${product.price}</p>
     <button class="addToCart" type="button" data-product-id="${product.id}">Add To Cart</button>
