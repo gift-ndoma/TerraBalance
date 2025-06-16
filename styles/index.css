@@ -77,7 +77,8 @@
 }
 
 .hero-info h1 span {
-    background: linear-gradient(135deg, #fff, #4CAF50, #81C784, #fff);
+    color: #fff;
+    background: linear-gradient(135deg, #fff, #fff, #fff, #fff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -87,10 +88,10 @@
 
 @keyframes glow {
     from {
-        filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.5));
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
     }
     to {
-        filter: drop-shadow(0 0 20px rgba(76, 175, 80, 0.8));
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
     }
 }
 

@@ -9,6 +9,14 @@ function showTab(tabId, clickedButton) {
     clickedButton.classList.add('active');
 }
 
+// Mobile menu toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
 // Updated products array with unique IDs - make it global
 window.products = [
     {
