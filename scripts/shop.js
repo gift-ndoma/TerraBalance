@@ -28,7 +28,6 @@ function decreaseQuantity(productId) {
     }
 }
 
-
 function addProductToCart(productId) {
     const product = shopProducts.find(p => p.id === productId);
     const quantity = productQuantities[productId];
@@ -46,6 +45,17 @@ function addProductToCart(productId) {
     }
 }
 
+// New function to navigate to product page
+function viewProduct(productId) {
+    // Store the selected product in sessionStorage for the product page to use
+    const product = shopProducts.find(p => p.id === productId);
+    if (product) {
+        sessionStorage.setItem('selectedProduct', JSON.stringify(product));
+        // Navigate to the product page
+        window.location.href = 'product_page.html';
+    }
+}
+
 function renderProducts() {
     const container = document.getElementById('products-container');
     
@@ -54,9 +64,11 @@ function renderProducts() {
         productCard.className = 'product-card';
         
         productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" loading="lazy" class="product-image" 
+            <div class="product-image-container" onclick="viewProduct(${product.id})" style="cursor: pointer;">
+                <img src="${product.image}" alt="${product.name}" loading="lazy" class="product-image">
+            </div>
             <div class="product-info">
-                <h3 class="product-name">${product.name}</h3>
+                <h3 class="product-name" onclick="viewProduct(${product.id})" style="cursor: pointer;">${product.name}</h3>
                 <p class="product-description">${product.description}</p>
                 <div class="product-price">$${product.price.toFixed(2)}</div>
                 <div class="product-actions">
@@ -76,6 +88,8 @@ function renderProducts() {
 
 renderProducts();
 
+// Make functions globally available
 window.increaseQuantity = increaseQuantity;
 window.decreaseQuantity = decreaseQuantity;
 window.addProductToCart = addProductToCart;
+window.viewProduct = viewProduct;

@@ -672,6 +672,7 @@ form button:hover {
     padding: 20px 0 10px 20px;
     font-family: var(--main-font);
     color: var(--card-foreground);
+    margin-left: 1rem;
 }
 
 .related-products p {
