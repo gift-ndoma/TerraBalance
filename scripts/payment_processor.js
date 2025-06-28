@@ -271,11 +271,11 @@ class PaymentProcessor {
                 A confirmation email will be sent to ${order.customer.email}
             </p>
             <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <button onclick="this.closest('[style*=\"position: fixed\"]').remove(); window.location.href='index.html'" 
+                <button onclick="this.closest('[style*=\"position: fixed\"]').remove(); window.location.href='shop.html'" 
                         style="background: #4CAF50; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-size: 16px;">
                     Continue Shopping
                 </button>
-                <button onclick="this.closest('[style*=\"position: fixed\"]').remove(); window.location.href='orders.html'" 
+                <button onclick="this.closest('[style*=\"position: fixed\"]').remove(); window.location.href='order.html'" 
                         style="background: #2c5530; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-size: 16px;">
                     View Orders
                 </button>

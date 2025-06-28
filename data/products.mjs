@@ -1,30 +1,30 @@
 export const shopProducts = [
     {
         id: 7,
-        name: "Sun-Dried Plantain Chips",
-        description: "Premium quality sun-dried plantain chips, naturally sweetened and packed with nutrients. Perfect for healthy snacking and sustainable living.",
+        name: "Organic Plantain",
+        description: "Premium quality organic plantain, naturally sweetened and packed with nutrients. Perfect for healthy snacking and sustainable living.",
         image: "images/plantain.jpg",
         price: 5.99,
         origin: "West Africa",
         category: "Snacks & Treats",
         availability: "85 in stock",
-        thumbnails: ["images/plantain.jpg", "images/plantain.jpg", "images/plantain.jpg", "images/plantain.jpg"]
+        thumbnails: ["images/plantain1.jpg", "images/plantain2.jpg", "images/plantain3.jpg", "images/plantain.jpg"]
     },
     {
         id: 8,
-        name: "Compost Thermometer",
-        description: "Professional-grade compost thermometer for monitoring optimal composting temperatures. Essential tool for sustainable gardening and farming practices.",
-        image: "images/thermometer.jpg",
+        name: "Organic Fresh Eggs",
+        description: "Farm-fresh organic eggs laid by free-range hens. Rich in flavor, high in nutrients, and perfect for your healthy breakfast, baking, or cooking needs.",
+        image: "images/egg3.jpg",
         price: 66,
         origin: "Germany",
-        category: "Garden Tools",
+        category: "Dairy & Eggs",
         availability: "12 in stock",
-        thumbnails: ["images/thermometer.jpg", "images/thermometer.jpg", "images/thermometer.jpg", "images/thermometer.jpg"]
+        thumbnails: ["images/egg1.jpg", "images/egg2.jpg", "images/egg.jpg", "images/egg3.jpg"]
     },
     {
         id: 9,
-        name: "Organic Corn Seeds",
-        description: "Premium quality organic corn seeds, non-GMO and heirloom variety. Perfect for sustainable gardening and farming with excellent yield potential.",
+        name: "Organic Corn",
+        description: "Premium quality organic corn, non-GMO and heirloom variety. Perfect for sustainable gardening and farming with excellent yield potential.",
         image: "images/corn.jpg",
         price: 28,
         origin: "Midwest USA",
