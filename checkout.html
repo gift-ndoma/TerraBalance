@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Terra Balance Organic Cocoa – Pure, Natural, and Sustainably Sourced">
+    <meta property="og:description" content="Discover Terra Balance Organic Cocoa – ethically sourced, rich in flavor, and perfect for healthy drinks and recipes. 100% organic and sustainably grown.">
+    <meta property="og:image" content="https://gift-ndoma.github.io/TerraBalance/images/logo.jpeg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://gift-ndoma.github.io/TerraBalance/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Terra Balance">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/checkout.css">
+    <link rel="icon" sizes="32x32" href="images/logo.jpeg">
+    <script src="scripts/checkout.js" defer></script>
+    <script src="scripts/product_page.js" defer></script>
+    <script src="scripts/review.js" defer></script>
+    <script src="scripts/add-to-cart.js" defer></script>
+    <script src="scripts/cart-manager.js" defer></script>
+    <script src="scripts/payment_processor.js" defer></script>
+    <title>Checkout | Terra Balance</title>
+</head>
+<body>
+    <header>
+        <div class="terra-header">
+            <img src="images/logo.jpeg" alt="Terra Balance Logo" width="60" height="60">
+            <h1>Terra Balance</h1>
+        </div>
+        <!-- Hamburger menu for mobile -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="order.html">Order</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <a href="cart.html"><img src="images/cart.svg" alt="Cart Icon" width="30" height="30"><span id="cart-count">0</span></a>
+        </div>
+    </header>
+    <main>
+        <div class="bread-crumb">
+            <ul>
+                <li><a href="index.html">Home</a> &gt;</li>
+                <li><a href="shop.html">Shop</a> &gt;</li>
+                <li><a href="cart.html">Your Cart</a> &gt;</li>
+                <li>Checkout</li>
+            </ul>
+        </div>
+        <div class="container" id="app">
+            <div class="left">
+                <p>Payment Methods</p>
+                <hr style="border:1px solid #ccc; margin: 0 15px;">
+                <div class="methods">
+                    <div onclick="doFun()" id="tColorA" style="color: greenyellow;">
+                       Payment by card
+                    </div>
+                    <hr style="border:1px solid #ccc; margin: 0 15px;">
+                </div>
+            </div>
+            <div class="center">
+                <a href="https://www.shift4shop.com/credit-card-logos.html">
+                    <img alt="Credit Card Logos" src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-4.png" width="250" height="auto">
+                </a>
+                <hr style="border:1px solid #ccc; margin: 0 15px;">
+                <div class="card-details">
+                    <form>
+                        <p>Card Number</p>
+                        <div class="c-number" id="c-number">
+                            <input id="number" class="cc-number" placeholder="Card Number" maxlength="19" required>
+                        </div>
+                        <div class="c-details">
+                            <div>
+                                <p>Expiry date</p>
+                                <input id="e-date" class="cc-exp" placeholder="MM/YY" required maxlength="5">
+                            </div>
+                            <div>
+                                <p>CVV</p>
+                                <div class="cvv-box" id="cvv-box">
+                                    <input id="cvv" class="cc-cvv" placeholder="CVV" required maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="email">
+                            <p>Email</p>
+                            <input type="email" placeholder="example@gmail.com" id="email" required>
+                        </div>
+                        <button type="submit">PAY NOW</button>
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+                <p>Order Information</p>
+                <hr style="border:1px solid #ccc; margin: 0 15px;">
+                <div class="details">
+                    <div style="font-weight: bold; padding: 3px 0;">Order Description</div>
+                    <div style="padding: 3px 0;">Test Payment</div>
+                </div>
+                <hr style="border:1px solid #ccc; margin: 0 15px;">
+                <a href="https://www.shift4shop.com/credit-card-logos.html">
+                    <img alt="Credit Card Logos" title="Credit Card Logos" src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-4.png" width="100%" height="auto">
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

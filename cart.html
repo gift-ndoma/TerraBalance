@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Terra Balance Organic Cocoa – Pure, Natural, and Sustainably Sourced">
     <meta property="og:description" content="Discover Terra Balance Organic Cocoa – ethically sourced, rich in flavor, and perfect for healthy drinks and recipes. 100% organic and sustainably grown.">
-    <meta property="og:image" content="images/organic-cocoa-main.jpg">
+    <meta property="og:image" content="https://gift-ndoma.github.io/TerraBalance/images/logo.jpeg">
     <meta property="og:locale" content="en_US">
-    <meta property="og:url" content="https://gift-ndoma.github.io/product_page/product.html">
+    <meta property="og:url" content="https://gift-ndoma.github.io/TerraBalance/index.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Terra Balance">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,11 +16,13 @@
     <link rel="stylesheet" href="styles/product_page.css">
     <link rel="stylesheet" href="styles/product-page-large.css">
     <link rel="stylesheet" href="styles/cart.css">
+    <link rel="icon" sizes="32x32" href="images/logo.jpeg">
     <script src="scripts/product_page.js" defer></script>
     <script src="scripts/review.js" defer></script>
     <script src="scripts/add-to-cart.js" defer></script>
     <script src="scripts/cart-manager.js" defer></script>
-    <title>Organic Andean Cocoa Powder | Terra Balance</title>
+    <script src="scripts/payment_processor.js" defer></script>
+    <title>Cart | Terra Balance</title>
 </head>
 <body>
     <header>
@@ -38,6 +40,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
+                <li><a href="order.html">Order</a></li>
             </ul>
         </nav>
         <div class="cart">
@@ -158,15 +161,11 @@
                             <span>Total:</span>
                             <span>$${total.toFixed(2)}</span>
                         </div>
-                        <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+                        <a href="checkout.html"><button class="checkout-btn">Proceed to Checkout</button></a>
                         <a href="shop.html" class="continue-shopping" style="display: block; text-align: center; margin-top: 1rem;">Continue Shopping</a>
                     </div>
                 </div>
             `;
-        }
-
-        function proceedToCheckout() {
-            alert('Checkout functionality would be implemented here!');
         }
 
         // Initialize cart display and count on page load
@@ -188,18 +187,17 @@
         <div class="quick-links">
             <h3>Quick Links</h3>
             <ul>
-                <li>Shop All</li>
-                <li>Our Story</li>
-                <li>Sustainability</li>
-                <li>Contact Us</li>
+                <a href="shop.html"><li>Shop All</li></a>
+                <a href="index.html"><li>Our Story</li></a>
+                <a href="index.html"><li>Sustainability</li></a>
             </ul>
         </div>
         <div class="contact-container">
             <h3>Connect With Us</h3>
             <div class="social-icons">
-                <a><img src="images/youtube.svg" alt="Youtube Icon" width="30"></a>
-                <a><img src="images/facebook.svg" alt="FaceBook Icon" width="30"></a>
-                <a><img src="images/instagram.svg" alt="Instagram Icon" width="30"></a>
+                <a href="https://web.youtube.com/"><img src="images/youtube.svg" alt="Youtube Icon" width="30"></a>
+                <a href="https://web.facebook.com/?_rdc=1&_rdr#"><img src="images/facebook.svg" alt="FaceBook Icon" width="30"></a>
+                <a href="https://www.instagram.com/terrabalanceenterprise/"><img src="images/instagram.svg" alt="Instagram Icon" width="30"></a>
             </div>
             <p>Subscribe to our newsletter for updates and special offers.</p>
             <form>
