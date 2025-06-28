@@ -30,7 +30,7 @@ export const shopProducts = [
         origin: "Midwest USA",
         category: "Seeds & Plants",
         availability: "45 in stock",
-        thumbnails: ["images/corn.jpg", "images/corn.jpg", "images/corn.jpg", "images/corn.jpg"]
+        thumbnails: ["images/corn.jpg", "images/corn2.jpg", "images/corn1.jpg", "images/corn3.jpg"]
     },
     {
         id: 10,
@@ -52,7 +52,7 @@ export const shopProducts = [
         origin: "Pacific Northwest",
         category: "Fresh Produce",
         availability: "67 in stock",
-        thumbnails: ["images/apple.jpg", "images/apple.jpg", "images/apple.jpg", "images/apple.jpg"]
+        thumbnails: ["images/apple.jpg", "images/apple1.jpg", "images/apple3.jpg", "images/apple2.jpg"]
     },
     {
         id: 4, 
@@ -74,7 +74,7 @@ export const shopProducts = [
         origin: "Mediterranean Region",
         category: "Fresh Produce",
         availability: "78 in stock",
-        thumbnails: ["images/tomato.jpg", "images/tomato.jpg", "images/tomato.jpg", "images/tomato.jpg"]
+        thumbnails: ["images/tomato1.jpg", "images/tomato2.jpg", "images/tomato3.jpg", "images/tomato.jpg"]
     },
     {
         id: 6,
@@ -85,7 +85,7 @@ export const shopProducts = [
         origin: "Tropical Regions",
         category: "Fresh Produce",
         availability: "56 in stock",
-        thumbnails: ["images/mango.jpg", "images/mango.jpg", "images/mango.jpg", "images/mango.jpg"]
+        thumbnails: ["images/mango.jpg", "images/mango1.jpg", "images/mango2.jpg", "images/mango3.jpg"]
     },
     {
         id: 1,
